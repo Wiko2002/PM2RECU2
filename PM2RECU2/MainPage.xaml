@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="PM2RECU2.MainPage"
+             Title="Nuevo Sitio">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Limpiar" IconImageSource="restart_ico" Clicked="OnBtnLimpiarClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout Padding="15" Spacing="10" BackgroundColor="#F5F5F5">
+
+            <Image Source="uth.png" HeightRequest="100" WidthRequest="150" HorizontalOptions="Center" Margin="0,0,0,8"/>
+
+            <Frame Padding="0" BackgroundColor="White">
+                <StackLayout>
+                    <toolkit:MediaElement x:Name="videoElement"
+                        ShouldShowPlaybackControls="True"
+                        Aspect="AspectFill"
+                        HeightRequest="225"/>
+
+                    <Button x:Name="btnVideo" 
+                        ImageSource="video_ico.png"
+                        Clicked="OnBtnVideoClicked"
+                        BackgroundColor="#CCCCCC" 
+                        CornerRadius="0"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout Spacing="5">
+                <StackLayout>
+                    <Label Text="Latitud:" FontSize="Small" FontAttributes="Bold" TextColor="#333333"/>
+                    <Frame Padding="0" CornerRadius="10" BackgroundColor="White">
+                        <Entry x:Name="txtLatitud" Keyboard="Text" IsEnabled="False" FontSize="14" BackgroundColor="WhiteSmoke"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="Longitud:" FontSize="Small" FontAttributes="Bold" TextColor="#333333"/>
+                    <Frame Padding="0" CornerRadius="10" BackgroundColor="White">
+                        <Entry x:Name="txtLongitud" Keyboard="Text" IsEnabled="False" FontSize="14" BackgroundColor="WhiteSmoke"/>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Nota de Voz:" FontSize="Small" FontAttributes="Bold" TextColor="#333333"/>
+                <Button x:Name="btnBtnStartRecording"
+                    ImageSource="microphone_ico.png"
+                    BackgroundColor="#CCCCCC"
+                    Clicked="OnBtnStartRecordingClicked"
+                    TextColor="White"/>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="EndAndExpand" Spacing="5" Orientation="Horizontal" Margin="0, 20, 0,0">
+                <Button x:Name="salvarU" Text="Guardar" Clicked="OnBtnGuardarClicked"
+                    ImageSource="guardar_ico.png"
+                    BackgroundColor="#BDBDBD"
+                    HorizontalOptions="FillAndExpand"
+                    FontSize="Small"
+                    FontAttributes="Bold"
+                    TextColor="White"/>
+
+                <Button x:Name="ListaU" Text="Lista" Clicked="OnBtnListaClicked"
+                    ImageSource="lista_ico.png"
+                    BackgroundColor="#BDBDBD"
+                    HorizontalOptions="FillAndExpand"
+                    FontSize="Small"
+                    FontAttributes="Bold"
+                    TextColor="White"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
